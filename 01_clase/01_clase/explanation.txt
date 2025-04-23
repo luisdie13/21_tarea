@@ -1,0 +1,381 @@
+                                         DOM
+
+El DOM (Document Object Model) es una interfaz de programación para documentos HTML y XML. 
+Proporciona una representación estructurada del documento y define cómo los programas pueden acceder y 
+manipular su estructura, estilo y contenido. Aquí hay algunos puntos clave sobre el DOM:
+
+
+ESTRUCTURA DEL DOM
+
+1.Árbol de Nodos:
+
+    El DOM representa el documento como una estructura jerárquica de nodos, similar a un árbol. 
+    Cada elemento HTML, atributo y texto en el documento se convierte en un nodo en este árbol.
+    Por ejemplo, un documento HTML simple:
+
+        <html>
+            <head>
+                <title>My Document</title>
+            </head>
+            <body>
+                <h1>Hello, World!</h1>
+            </body>
+        </html>
+
+    Se representaría en el DOM como un árbol con nodos para <html>, <head>, <title>, <body>, <h1>, 
+    y los textos "My Document" y "Hello, World!".
+
+2. Tipos de Nodos:
+
+    * Elementos: Representan las etiquetas HTML (por ejemplo, <div>, <p>, <a>).
+    * Atributos: Representan los atributos de los elementos HTML(id, class).
+    * Texto: Repesentan el contenido textual dentro de los elementos.
+    * Comentarios: Representan los comentarios en el código HTML
+
+
+
+MANIPULACIÓN DEL DOM
+
+El DOM permite a los desarrolladores acceder y manipular el contenido, estructura y estilo de un 
+documento de manera dinámica.  Aquí hay algunas operaciones comunes ques se pueden realizar con el DOM:
+
+1. Acceso a Elementos:
+    * document.getElementById('id'): Selecciona un elemento por su id.
+    * document.getElementsByClassName('class'): Selecciona todos los elementos con una 
+      clase específica.
+    * document.getElementsByTagName('tag'): Selecciona todos los elementos con una etiqueta 
+      específica.
+    * document.querySelector('selector'): Selecciona el primer elemento que coincide con 
+      un selector CSS.
+    * document.querySelectorAll('selector'): Selecciona todos los elementos que coinciden 
+      con un selector CSS.
+
+2. Manipulación de Contenido:
+    * element.innerHTML: Obtiene o establece el contenido HTML de un elemento.
+    * element.textContent: Obtiene o establece el contenido textual de un elemento.
+
+3. Manipulación de Atributos:   
+    * element.setAttribute('attribute', 'value'): Establece el valor de un atributo.
+    * element.getAttribute('attribute'): Obtiene el valor de un atributo.
+    * element.removeAttribute('attribute'): Elimina un atributo.
+
+4. Estilo y Clases:
+    * element.style.property: Establece una propiedad de estilo en línea.
+    * element.classList.add('class'): Añade una clase a un elemento.
+    * element.classList.remove('class'): Elimina una clase de un elemento.
+    * element.classList.toggle('class'): Alterna una clase en un elemento.
+
+5. Creación y Eliminación de Elementos:
+    * document.createElement('tag'): Crea un nuevo elemento.
+    * parentElement.appendChild(newElement): Añade un nuevo elemento como hijo de un elemento existente.
+    * parentElement.removeChild(childElement): Elimina un elemento hijo de un elemento existente.
+
+
+EJEMPLO DE MANIPULACIÓN DEL DOM
+
+Este es un ejemplo simple de cómo manipular el DOM usando JavaScript:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Example</title>
+</head>
+<body>
+  <h1 id="header">Hello, World!</h1>
+  <button onclick="changeHeader()">Change Header</button>
+
+  <script>
+    function changeHeader() {
+      // Accede al elemento con id 'header'
+      const header = document.getElementById('header');
+      // Cambia el contenido de texto del elemento
+      header.textContent = 'Hello, DOM!';
+      // Cambia el color del texto
+      header.style.color = 'blue';
+    }
+  </script>
+</body>
+
+En este ejemplo, al hacer clic en el botón, se cambia el contenido y el color del encabezado <h1>.
+
+RESUMEN
+El DOM es una representación estructurada de un documento HTML o XML que permite a los desarrolladores acceder y 
+manipular su contenido, estructura y estilo de manera dinámica. Es una parte fundamental del desarrollo web, 
+ya que permite crear aplicaciones web interactivas y dinámicas.
+
+
+EJERCICIO 1:
+Al código anterior agrega un boton que restablezca el header Hello World!
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Example</title>
+</head>
+<body>
+  <h1 id="header">Hello, World!</h1>
+  <button onclick="changeHeader()">Change Header</button>
+  <button onclick="resetHeader()">Reset Header</button>
+    <script>
+    function changeHeader() {
+      // Accede al elemento con id 'header'
+      const header = document.getElementById('header');
+      // Cambia el contenido de texto del elemento
+      header.textContent = 'Hello, DOM!';
+      // Cambia el color del texto
+      header.style.color = 'blue';
+    }
+       function resetHeader() {
+      // Accede al elemento con id 'header'
+      const header = document.getElementById('header');
+      // Cambia el contenido de texto del elemento
+      header.textContent = 'Hello, World!';
+      // Cambia el color del texto
+      header.style.color = 'black';
+    }
+  </script>
+
+
+</body>
+
+EJERCICIO 2:
+Al código anterior agrega un boton que escriba ambos mensajes:
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Example</title>
+</head>
+<body>
+  <h1 id="header">Hello, World!</h1>
+  <button onclick="changeHeader()">Change Header</button>
+  <button onclick="resetHeader()">Reset Header</button>
+  <button onclick="bothHeader()">Both Headers</button>
+    <script>
+    function changeHeader() {
+      // Accede al elemento con id 'header'
+      const header = document.getElementById('header');
+      // Cambia el contenido de texto del elemento
+      header.textContent = 'Hello, DOM!';
+      // Cambia el color del texto
+      header.style.color = 'blue';
+    }
+       function resetHeader() {
+      // Accede al elemento con id 'header'
+      const header = document.getElementById('header');
+      // Cambia el contenido de texto del elemento
+      header.textContent = 'Hello, World!';
+      // Cambia el color del texto
+      header.style.color = 'black';
+    }
+      
+      function bothHeader() {
+      // Accede al elemento con id 'header'
+      const header = document.getElementById('header');
+      // Cambia el contenido de texto del elemento
+      header.textContent = 'Hello, World! Hello, DOM!';
+      // Cambia el color del texto
+      header.style.color = 'red';
+    }
+  </script>
+
+
+</body>
+
+
+
+
+Explicación General
+
+1. Función convertTemp
+    Obtener el valor de la temperatura ingresada:
+
+    const inputTemp = parseFloat(document.getElementById('inputTemp').value);
+
+    Se obtiene el valor de la temperatura ingresada por el usuario desde un campo de entrada en el HTML con el 
+    ID inputTemp.
+    parseFloat convierte este valor a un número de punto flotante.  
+
+2. Obtener la unidad de temperatura seleccionada:
+
+    const inputUnit = document.getElementById('inputUnit').value;
+
+    Se obtiene la unidad de temperatura seleccionada por el usuario desde un elemento de selección en el HTML con 
+    el ID inputUnit.
+
+3. Declarar variables para almacenar las temperaturas convertidas:
+
+    let celsius, fahrenheit, kelvin;
+
+4. Convertir la temperatura según la unidad seleccionada:
+
+    if (inputUnit === 'C') {
+        celsius = inputTemp;
+        fahrenheit = (inputTemp * 9/5) + 32;
+        kelvin = inputTemp + 273.15;
+    } else if (inputUnit === 'F') {
+        celsius = (inputTemp - 32) * 5/9;
+        fahrenheit = inputTemp;
+        kelvin = (inputTemp - 32) * 5/9 + 273.15;
+    } else if (inputUnit === 'K') {
+        celsius = inputTemp - 273.15;
+        fahrenheit = (inputTemp - 273.15) * 9/5 + 32;
+        kelvin = inputTemp;
+    }
+
+    Dependiendo de la unidad seleccionada (C para Celsius, F para Fahrenheit, K para Kelvin), se realizan las 
+    conversiones necesarias.
+    Las fórmulas de conversión son:
+        De Celsius a Fahrenheit: F = (C * 9/5) + 32
+        De Celsius a Kelvin: K = C + 273.15
+        De Fahrenheit a Celsius: C = (F - 32) * 5/9
+        De Fahrenheit a Kelvin:  K = (F - 32) * 5/9 + 273.15
+        De Kelvin a Celsius:  C = K -273.15
+        De Kelvin a Fahrenheit: F = (K -273-15) * 9/5 + 32
+ 
+5. Actualizar los elementos del DOM con las temperaturas convertidas:
+
+    document.getElementById('celsiusValue').innerText = `${celsius.toFixed(2)} °C`;
+    document.getElementById('fahrenheitValue').innerText = `${fahrenheit.toFixed(2)} °F`;
+    document.getElementById('kelvinValue').innerText = `${kelvin.toFixed(2)} K`;
+
+    Se actualizan los elementos del HTML con los IDs celsiusValue, fahrenheitValue, y kelvinValue para mostrar las 
+    temperaturas convertidas.
+    toFixed(2) se usa para mostrar las temperaturas con dos decimales.
+
+6. Actualizar la altura del mercurio en los termómetros:
+
+    updateThermometer('celsiusMercury', celsius, -30, 50);
+    updateThermometer('fahrenheitMercury', fahrenheit, -22, 122);
+    updateThermometer('kelvinMercury', kelvin, 243.15, 323.15);
+
+    Se llama a la función updateThermometer para actualizar la altura del mercurio en los termómetros visuales.
+    Los parámetros son el ID del termómetro, el valor de la temperatura, y los valores mínimo y máximo de la escala del 
+    termómetro.
+
+
+Función updateThermometer
+
+1.  Obtener el elemento del termómetro por su ID:
+
+        const thermometer = document.getElementById(id);
+
+2.  Calcular el porcentaje de altura del mercurio basado en el valor de la temperatura:
+
+        const percentage = ((value - min) / (max - min)) * 100;
+
+3.  Actualizar la altura del mercurio:
+
+        thermometer.style.height = `${percentage}%`;
+
+        Se ajusta la altura del mercurio en el termómetro visual en función del porcentaje calculado.
+
+En resumen, este código toma una temperatura ingresada por el usuario, la convierte a otras unidades 
+(Celsius, Fahrenheit, Kelvin), actualiza la interfaz de usuario con los valores convertidos y ajusta 
+visualmente la altura del mercurio en los termómetros correspondientes.
+
+
+
+
+Este código JavaScript permite convertir una temperatura ingresada por el usuario
+a otras dos unidades de medida (Celsius, Fahrenheit y Kelvin) y actualizar 
+visualmente unos termómetros en la página web para reflejar las temperaturas 
+convertidas. 
+La función convertTemp maneja la lógica de conversión y actualización del DOM, 
+mientras que la función updateThermometer se encarga de ajustar la altura del 
+mercurio en los termómetros gráficos.
+
+
+Explicación de funciones:
+
+function updateThermometer(id, value, min, max) {: Define una nueva función llamada 
+updateThermometer que toma cuatro parámetros: id, value, min, y max.
+
+const thermometer = document.getElementById(id);: Obtiene el elemento del termómetro por su ID.
+
+const percentage = ((value - min) / (max - min)) * 100;: Calcula el porcentaje de altura del mercurio basado 
+en el valor de la temperatura.
+
+thermometer.style.height = ${percentage}%;: Actualiza la altura del mercurio en el termómetro.
+
+}: Cierra la función updateThermometer.
+
+
+Explicación línea por línea:
+
+function convertTemp() {: Define una nueva función llamada convertTemp.
+
+const inputTemp = parseFloat(document.getElementById('inputTemp').value);: Obtiene el valor ingresado por el usuario en 
+el campo de entrada con el ID inputTemp y lo convierte a un número de punto flotante.
+
+const inputUnit = document.getElementById('inputUnit').value;: Obtiene la unidad de temperatura seleccionada 
+por el usuario en el campo de selección con el ID inputUnit.
+
+let celsius, fahrenheit, kelvin;: Declara tres variables para almacenar las temperaturas convertidas.
+
+f (inputUnit === 'C') {: Verifica si la unidad seleccionada es Celsius.
+
+celsius = inputTemp;: Asigna el valor ingresado a la variable celsius.
+
+fahrenheit = (inputTemp * 9/5) + 32;: Convierte el valor de Celsius a Fahrenheit.
+
+kelvin = inputTemp + 273.15;: Convierte el valor de Celsius a Kelvin.
+
+} else if (inputUnit === 'F') {: Verifica si la unidad seleccionada es Fahrenheit.
+
+celsius = (inputTemp - 32) * 5/9;: Convierte el valor de Fahrenheit a Celsius.
+
+fahrenheit = inputTemp;: Asigna el valor ingresado a la variable fahrenheit.
+
+kelvin = (inputTemp - 32) * 5/9 + 273.15;: Convierte el valor de Fahrenheit a Kelvin.
+
+} else if (inputUnit === 'K') {: Verifica si la unidad seleccionada es Kelvin.
+
+celsius = inputTemp - 273.15;: Convierte el valor de Kelvin a Celsius.
+
+fahrenheit = (inputTemp - 273.15) * 9/5 + 32;: Convierte el valor de Kelvin a Fahrenheit.
+
+kelvin = inputTemp;: Asigna el valor ingresado a la variable kelvin.
+
+document.getElementById('celsiusValue').innerText = ${celsius.toFixed(2)} °C;: Actualiza el elemento del DOM 
+con el ID celsiusValue con la temperatura en Celsius.
+
+document.getElementById('fahrenheitValue').innerText = ${fahrenheit.toFixed(2)} °F;: Actualiza el elemento del DOM 
+con el ID fahrenheitValue con la temperatura en Fahrenheit.
+
+document.getElementById('kelvinValue').innerText = ${kelvin.toFixed(2)} K;: Actualiza el elemento del DOM con 
+el ID kelvinValue con la temperatura en Kelvin.
+
+updateThermometer('celsiusMercury', celsius, -30, 50);: Llama a la función updateThermometer para actualizar 
+el termómetro de Celsius.
+
+updateThermometer('fahrenheitMercury', fahrenheit, -22, 122);: Llama a la función updateThermometer para 
+actualizar el termómetro de Fahrenheit.
+
+updateThermometer('kelvinMercury', kelvin, 243.15, 323.15);: Llama a la función updateThermometer para actualizar 
+el termómetro de Kelvin.
+
+}: Cierra la función convertTemp.
+
+
+
+
+
+En el siguiente ejemplo utilizaremos EL DOMContentLoaded, pero discutiremos aquí su uso o no uso.
+
+El uso de DOMContentLoaded es útil cuando necesitas asegurarte de que el DOM esté completamente 
+cargado antes de ejecutar tu código JavaScript. 
+Sin embargo, hay situaciones en las que no es necesario o no se utiliza DOMContentLoaded. 
+
+Aquí hay algunas razones y situaciones en las que podrías no necesitar DOMContentLoaded:
+
+Situaciones en las que no necesitas DOMContentLoaded
+
+Código JavaScript en el Final del Body:
+
+Si colocas tu <script> al final del <body>, el DOM ya estará cargado cuando se ejecute el script. 
+En este caso, no necesitas DOMContentLoaded porque el script se ejecutará después de que todos los 
+elementos del DOM estén disponibles.
+
+Si el código JavaScript está directamente en el HTML y se ejecuta en respuesta a eventos 
+(como un clic en un botón), no necesitas DOMContentLoaded.
